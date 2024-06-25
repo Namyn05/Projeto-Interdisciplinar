@@ -1,0 +1,38 @@
+.body container text-center {
+    background-color:  rgb(205, 231, 255);
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+.menu {
+        list-style-type: none;
+        display: flex;
+    }
+.menu li {
+        margin-right: 20px;
+    }
+.menu a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+h1{
+    text-align: center;
+    
+}
+.navbar img,a{
+   font-family: Arial, Helvetica, sans-serif;
+   color:rgb(255, 255, 255);
+}
+
+.header h1 {
+    margin: 0;
+    text-align: center;
+}
+.row {
+    position: absolute;
+    
+
+}
+

@@ -1,0 +1,23 @@
+img{
+    text-align: right;
+    position: absolute;
+    left: 550px;
+    top: 90px;
+}
+h1{
+    text-align: left;
+    position: relative;
+    left: 20px;
+}
+
+h4{
+    text-align: left;
+    position: relative;
+    left: 20px;
+}
+
+li{
+    text-align: left;
+    position: relative;
+    left: 20px;
+}
