@@ -20,7 +20,7 @@
 
 ?>
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -109,22 +109,22 @@
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Quem somos</a>
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://siagepe.educacao.mg.gov.br/">edital</a>
+            <a class="nav-link" href="#">Features</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="formulario.php">fale conosco</a>
+            <a class="nav-link" href="#">Pricing</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
     <div class="box">
-        <form action="formulario.php" method="POST">
+        <form action="">
             <fieldset>
-                <legend><b>Fale Conosco</b></legend>
+                <legend><b>Fórmulário de Clientes</b></legend>
                 <br>
                 <div class="inputBox">
                     <input type="text" name="nome" id="nome" class="inputUser" required>
@@ -132,14 +132,15 @@
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <input type="email" name="email" id="email" class="inputUser" required>
+                    <input type="text" name="email" id="email" class="inputUser" required>
                     <label for="email" class="labelInput">Email</label>
                 </div>
                 <br><br>
                 <div class="inputBox">
                     <input type="tel" name="telefone" id="telefone" class="inputUser" required>
                     <label for="telefone" class="labelInput">Telefone</label>
-                    <br>
+                </div>
+                <br><br>
                 <input type="submit" name="submit" id="submit">
             </fieldset>
         </form>
