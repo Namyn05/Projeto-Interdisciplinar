@@ -1,18 +1,16 @@
 <?php
+  $dbhost = 'localhost';
+  $dbusername = 'root';
+  $dbpassword = '';
+  $dbname = 'formulario-contato';
 
-    $dbHost = 'LocalHost';
-    $dbUsername = 'root';
-    $dbPassword = '';
-    $dbName = 'formulario-aula';
-
-    $conexao = new mysqli($dbHost,$dbUsername,$dbPassword,$dbName);
-
-//     if($conexao->connect_errno)
-//     {
-//         echo "Erro";
-//     }
-//     else
-//     {
-//         echo "Conexão Efetuada com Sucesso";
-//    }
-?>
+  $conexao = new mysqli($dbhost,$dbusername,$dbpassword,$dbname)
+  
+   //if($conexao->connect_errno)
+   //{
+  //  echo "Erro";
+  //}
+  //else{
+  //  echo "Conexão efetuada com sucesso";
+  //}
+?> 

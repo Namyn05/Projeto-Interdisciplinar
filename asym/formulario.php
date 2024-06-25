@@ -1,46 +1,46 @@
 <?php
-
-if(isset($_POST['submit']))
-{
-    // print_r('Nome Completo: ' . $_POST['nome']);
-    // print_r('<br>');
-    // print_r('Email: ' . $_POST['email']);
-    // print_r('<br>');
-    // print_r('Telefone: ' . $_POST['telefone']);
-    // print_r('<br>');
-    // print_r('Mensagem: ' . $_POST['mensagem']);
+ 
+  if(isset($_POST['submit']))
+  {
+    //print_r('Nome: ' . $_POST['nome']);
+    //print_r('<br>');
+    //print_r('Email: ' . $_POST['email']);
+    //print_r('<br>');
+    //print_r('Telefone: ' . $_POST['telefone']);
 
     include_once('config.php');
-    
-    $nome = $_POST['Nome'];
-    $email = $_POST['email'];
-    $telefone = $_POST['Telefone'];
-    $mensagem = $_POST['mensagem']
 
-    $result = mysqli_query($conexao, "INSERT INTO usuario(nome,email,telefone,mensagem) 
-    VALUES ('$nome','$email','$telefone','$mensagem')");
-}
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $telefone = $_POST['telefone'];
+
+    $result = mysqli_query($conexao, "INSERT INTO usuario(nome,email,telefone)
+    Values ($nome, $email, $telefone)");
+  }
+
 ?>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário | ESCROLA ESTADUAL SINVAL RODRIGUES COELHO</title>
+    <title>Fale Conosco</title>
     <style>
         body{
             font-family: Arial, Helvetica, sans-serif;
-            background-image: linear-gradient(45deg, cyan, yellow);
+            background-image: linear-gradient(to right, rgb(20, 147, 220), rgb(17, 54, 71));
         }
         .box{
             color: white;
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.4);
+            transform: translate(-50%,-50%);
+            background-color: rgba(0, 0, 0, 0.6);
             padding: 15px;
-            border-radius: 17px;
-            width: 30%;
+            border-radius: 15px;
+            width: 20%;
         }
         fieldset{
             border: 3px solid dodgerblue;
@@ -50,7 +50,7 @@ if(isset($_POST['submit']))
             padding: 10px;
             text-align: center;
             background-color: dodgerblue;
-            border-radius: 9px;
+            border-radius: 8px;
         }
         .inputBox{
             position: relative;
@@ -63,14 +63,14 @@ if(isset($_POST['submit']))
             color: white;
             font-size: 15px;
             width: 100%;
-            letter-spacing: 2px;            
+            letter-spacing: 2px;
         }
         .labelInput{
             position: absolute;
             top: 0px;
             left: 0px;
             pointer-events: none;
-            transition: 5px;
+            transition: .5s;
         }
         .inputUser:focus ~ .labelInput,
         .inputUser:valid ~ .labelInput{
@@ -78,88 +78,71 @@ if(isset($_POST['submit']))
             font-size: 12px;
             color: dodgerblue;
         }
-        #data_nascimento{
-            border: none;
-            padding: 9px;
-            border-radius: 11px;
-            outline: none;
-            font-size: 17px;
-        }
         #submit{
-            background-image: linear-gradient(to right, rgb(20, 147, 220), rgb(17, 54, 71));
+            background-image: linear-gradient(to right,rgb(0, 92, 197), rgb(90, 20, 220));
             width: 100%;
             border: none;
             padding: 15px;
             color: white;
-            font-size: 17px;
+            font-size: 15px;
             cursor: pointer;
-            border-radius: 11px;
+            border-radius: 10px;
         }
         #submit:hover{
-            background-image: linear-gradient(to right, rgb(57, 20, 220), rgb(27, 17, 71));
+            background-image: linear-gradient(to right,rgb(0, 80, 172), rgb(80, 19, 195));
         }
     </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
-<a href="home.php">Voltar</a>
+<nav class="navbar" style="background-color: rgb(205, 231, 255);">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="sinvalS-removebg-preview.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+        Sinval
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Quem somos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://siagepe.educacao.mg.gov.br/">edital</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="formulario.php">fale conosco</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
     <div class="box">
-        <form action="formulario.php" method= "POST">
+        <form action="formulario.php" method="POST">
             <fieldset>
-                <legend>Formuário de Clientes</legend>
-                <br><br>
+                <legend><b>Fale Conosco</b></legend>
+                <br>
                 <div class="inputBox">
-                    <input type="text" name="Nome" id="Nome" class="inputUser" required>
-                    <label for="Nome" class="labelInput">Nome Completo</label>
+                    <input type="text" name="nome" id="nome" class="inputUser" required>
+                    <label for="nome" class="labelInput">Nome completo</label>
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <input type="password" name="senha" id="senha" class="inputUser" required>
-                    <label for="senha" class="labelInput">Senha</label>
-                </div>
-                <br><br>
-                <div class="inputBox">
-                    <input type="text" name="email" id="email" class="inputUser" required>
+                    <input type="email" name="email" id="email" class="inputUser" required>
                     <label for="email" class="labelInput">Email</label>
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <input type="tel" name="Telefone" id="Telefone" class="inputUser" required>
-                    <label for="Telefone" class="labelInput">Telefone</label>
-                </div>
-                <br><br>
-                <p>Sexo</p>
-                <input type="radio" id="feminino" name="genero" value="feminino" required>
-                <label for="feminino">Feminino</label>
-                <br>
-                <input type="radio" id="masculino" name="genero" value="masculino" required>
-                <label for="masculino">Masculino</label>
-                <br>
-                <input type="radio" id="outro" name="genero" value="outro" required>
-                <label for="outro">Outro</label>
-                <br><br>
-                <label for="data_nascimento"><b>Data de Nascimento:</b></label>
-                <br><br>
-                <input type="date" name="data_nascimento" id="data_nascimento" required>
-                <br><br><br>
-                <div class="inputBox">
-                    <input type="text" name="cidade" id="cidade" class="inputUser" required>
-                    <label for="cidade" class="labelInput">Cidade</label>
-                </div>
-                <br><br>
-                <div class="inputBox">
-                    <input type="text" name="estado" id="estado" class="inputUser" required>
-                    <label for="estado" class="labelInput">Estado</label>
-                </div>
-                <br><br>
-                <div class="inputBox">
-                    <input type="text" name="endereco" id="endereco" class="inputUser" required>
-                    <label for="endereco" class="labelInput">Endereço</label>
-                </div>    
-                <br><br> 
+                    <input type="tel" name="telefone" id="telefone" class="inputUser" required>
+                    <label for="telefone" class="labelInput">Telefone</label>
+                    <br>
                 <input type="submit" name="submit" id="submit">
-                <br>  <br>             
-                </div>
             </fieldset>
+        </form>
     </div>
-    </body>
+</body>
 </html>
